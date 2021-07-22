@@ -4,6 +4,7 @@ FROM centos:8
 COPY . /realworld
 
 ENV FLASK_APP=/realworld/autoapp.py
+ENV FLASK_RUN_PORT=8443
 ENV FLASK_DEBUG=1
 
 WORKDIR /realworld/
@@ -26,6 +27,6 @@ RUN flask db init
 RUN flask db migrate
 RUN flask db upgrade
 
-CMD ["flask", "run", "--with-threads"]
+CMD ["flask", "run", "--host=0.0.0.0", "--with-threads"]
 
 EXPOSE 8443
