@@ -81,3 +81,34 @@ This will generate a new migration script. Then run ::
 To apply the migration.
 
 For a full migration command reference, run ``flask db --help``.
+
+Exercice devOps
+---------------
+
+To build a docker image with the Dockerfile. After cloning the repository github,
+in the repository, run the following command (you need to be root or sudor for this) ::
+
+    docker build -t realworld .
+
+This will build the docker image realworld.
+To run the docker, run the following command ::
+
+    docker run -d -v realworld:/var/realworld -p 8443:8443 realworld
+
+To check if the docker container is running, use the following command ::
+
+    docker ps
+
+To push the image in a Docker Hub repository from the GitHub repository,
+the action docker-published.yml build and push an image using the Dockerfile
+in the main branch.
+
+To pull the image created from Docker Hub, use the following command with the 
+corresponding tagname::
+
+    docker pull dockeridemiles/images_realworld_example:tagname
+
+In the docker command to run a docker conatiner, we opened the port 8443 with
+the option -p 8443:8443
+
+    docker run -d -v realworld:/var/realworld -p 8443:8443 realworld
