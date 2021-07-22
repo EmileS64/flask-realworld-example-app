@@ -112,3 +112,7 @@ In the docker command to run a docker conatiner, we opened the port 8443 with
 the option -p 8443:8443 ::
 
     docker run -d -v realworld:/var/realworld -p 8443:8443 realworld
+
+To access the app with http (with the ip of the vm running the docker) ::
+
+    http://your_vm_ip:8443
