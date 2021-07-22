@@ -109,6 +109,6 @@ corresponding tagname::
     docker pull dockeridemiles/images_realworld_example:tagname
 
 In the docker command to run a docker conatiner, we opened the port 8443 with
-the option -p 8443:8443
+the option -p 8443:8443 ::
 
     docker run -d -v realworld:/var/realworld -p 8443:8443 realworld
